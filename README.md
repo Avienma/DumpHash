@@ -8,7 +8,7 @@
 
 ###### 杀软评测
 
-静态的话目前没什么问题 实际测试中卡巴会检测到后续动态行为
+静态的话目前都没什么问题 实际测试中卡巴会检测到后续动态行为
 
 火绒
 
@@ -20,7 +20,10 @@
 
 
 windows defender
+
 ![image-20230325104040773](https://user-images.githubusercontent.com/83112602/227687630-a221d6a8-cdf6-45db-bb69-c920831c13e7.png)
 
 
-卡巴斯基![image-20230325105224417](https://user-images.githubusercontent.com/83112602/227687680-43845183-cf5b-4488-a178-10e71036b890.png)
+卡巴斯基
+
+![image-20230325105224417](https://user-images.githubusercontent.com/83112602/227687680-43845183-cf5b-4488-a178-10e71036b890.png)
