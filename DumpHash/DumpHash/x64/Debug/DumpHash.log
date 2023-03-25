@@ -1,0 +1,3 @@
+﻿  DumpHash.c
+F:\360MoveData\Users\87251\Desktop\红队安研\练习\DumpHash\DumpHash\DumpHash\DumpHash.c(94,12): warning C4477: “wprintf”: 格式字符串“%s”需要类型“unsigned short *”的参数，但可变参数 2 拥有了类型“LPVOID”
+  DumpHash.vcxproj -> F:\360MoveData\Users\87251\Desktop\红队安研\练习\DumpHash\DumpHash\x64\Debug\DumpHash.exe
