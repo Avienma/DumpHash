@@ -1,4 +1,4 @@
-因为实战中Mimikatz的工具被各大安全厂商视为眼中钉，所以自己实现了一个对于LSASS进程的hash转存，代码里有用到了通过DefineDosDevice来绕过目标系统开启了PPL而无法dump hash的情况
+因为实战中Mimikatz的工具被各大安全厂商视为眼中钉，所以自己实现了一个对于LSASS进程的hash转存
 
 
 ###### Usage:
